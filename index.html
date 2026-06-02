@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joseph Ernest Mshana — Digital Innovation & Impact Systems</title>
-<meta name="description" content="Digital Innovation, Operations & Impact Systems Professional. VA Jo | Jemicit Impact Hub. Dar es Salaam, Tanzania.">
+<title>Joseph Ernest Mshana | VA Jo — Digital Innovation & Impact Specialist</title>
+<meta name="description" content="Joseph Ernest Mshana (VA Jo) — Digital Innovation & Impact Specialist. Virtual Assistant, MEAL practitioner, AI consultant, and systems thinker based in Dar es Salaam, Tanzania. Part of Jemicit Impact Hub.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -66,7 +66,7 @@ nav{
 .nav-cta:hover{background:var(--gold);color:var(--navy)}
 
 /* HERO */
-#hero{
+#home{
   min-height:100vh;
   display:grid;
   grid-template-columns:1fr 420px;
@@ -414,7 +414,7 @@ footer{
   .nav-toggle{display:flex}
   .nav-cta{display:none}
 
-  #hero{padding:6rem 1.5rem 3rem;min-height:auto;grid-template-columns:1fr;gap:2rem}
+  #home{padding:6rem 1.5rem 3rem;min-height:auto;grid-template-columns:1fr;gap:2rem}
   .hero-photo{min-height:320px;max-height:420px}
   .hero-h1{font-size:2.4rem}
   .hero-sub{font-size:0.88rem}
@@ -600,6 +600,17 @@ footer{
 .eco-info strong{display:block;font-family:var(--font-display);font-size:0.85rem;font-weight:700;margin-bottom:0.1rem}
 .eco-info span{font-size:0.72rem;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase}
 .eco-role{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);padding:0.2rem 0.6rem;border:1px solid var(--gold-dim);border-radius:2px;white-space:nowrap}
+
+/* Scroll offset for fixed nav */
+section, div[id] {scroll-margin-top: 80px}
+#home {scroll-margin-top: 0}
+
+@media(max-width:768px){
+  #blog > div[style*="grid-template-columns:1fr 1fr"]{
+    grid-template-columns:1fr !important;
+    gap:2.5rem !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -613,6 +624,7 @@ footer{
     <a href="#ailab">AI Lab</a>
     <a href="#experience">Experience</a>
     <a href="#vision">Vision</a>
+    <a href="#blog">Blog</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </div>
@@ -630,19 +642,21 @@ footer{
   <a href="#ailab" onclick="document.getElementById('mobileMenu').classList.remove('open')">AI Lab</a>
   <a href="#experience" onclick="document.getElementById('mobileMenu').classList.remove('open')">Experience</a>
   <a href="#vision" onclick="document.getElementById('mobileMenu').classList.remove('open')">Vision</a>
+  <a href="#blog" onclick="document.getElementById('mobileMenu').classList.remove('open')">Blog</a>
   <a href="#about" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
   <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
   <a href="https://wa.me/255743744471" target="_blank" class="btn-primary" style="font-size:0.78rem;padding:0.8rem 2rem">WhatsApp →</a>
 </div>
 
 <!-- HERO -->
-<section id="hero">
+<section id="home">
+<a name="hero"></a>
   <div class="hero-line"></div>
   <div class="hero-num">JEM — 2026©</div>
 
   <div class="fade-in">
     <div class="hero-badge">
-      <span></span>Open to work · Dar es Salaam, Tanzania
+      <span></span>Digital Innovation &amp; Impact Specialist &nbsp;·&nbsp; Dar es Salaam, Tanzania
     </div>
     <h1 class="hero-h1">I build the<br><em>digital architecture</em><br>for world-changing ideas.</h1>
     <p class="hero-sub">Moving individuals, social enterprises, and development agencies away from manual workflows into structured, AI-enhanced impact systems.</p>
@@ -679,7 +693,7 @@ footer{
     <div class="work-card fade-in">
       <div class="work-num">01 — Education Technology</div>
       <div class="work-tag">#DigitalLearning #SITOS X</div>
-      <h3>Shule Direct — VLE Project</h3>
+      <h3>Shule Direct — VLE Content & Platform Work</h3>
       <p>Contributed to curriculum-based content mapping and quality assurance for Zanzibar's Virtual Learning Experience (VLE) project across primary and secondary levels. Helped develop and optimize digital courses on the SITOS X platform. Spearheaded the SD Ideas Hub, an internal innovation space fostering team creativity and collaboration. Provided editorial assistance toward the 2024 Annual Report. Facilitated branding sessions for women entrepreneurs under the Ndoto Hub partnership.</p>
       <div class="work-metrics">
         <div class="metric"><strong>VLE</strong>Zanzibar Platform</div>
@@ -715,12 +729,12 @@ footer{
     <div class="work-card fade-in">
       <div class="work-num">04 — Digital Inclusion</div>
       <div class="work-tag">#YouthEnterprise #Mastercard</div>
-      <h3>Sheria Kiganjani — Going Beyond Project</h3>
-      <p>Mobilized over 100 young entrepreneurs to participate in the Digital Business Program under the Going Beyond project, driving digital inclusion and enterprise growth. Facilitated the Digital Business Program, providing coaching and mentorship for sustainable business development. Connected participants to ecosystem partners for funding, mentorship, and sector-specific support.</p>
+      <h3>Sheria Kiganjani — Going Beyond Digital Business Program</h3>
+      <p>Mobilized over 100 young entrepreneurs to participate in the Going Beyond project, driving digital inclusion and enterprise growth. Facilitated the Digital Business Program, providing coaching and mentorship for sustainable business development. Connected participants to ecosystem partners for funding, mentorship, and sector-specific support.</p>
       <div class="work-metrics">
         <div class="metric"><strong>100+</strong>Youth Mobilized</div>
-        <div class="metric"><strong>DOT & Mastercard Foundation</strong>Partnership</div>
-        <div class="metric"><strong>2024–2025</strong>Duration</div>
+        <div class="metric"><strong>DOT / MF</strong>Partnership</div>
+        <div class="metric"><strong>2024–25</strong>Duration</div>
       </div>
     </div>
   </div>
@@ -1217,15 +1231,68 @@ footer{
   </div>
 </section>
 
+
+<div class="divider"></div>
+
+<!-- JEMICIT BLOG -->
+<section id="blog" style="background:var(--navy)">
+  <div class="section-tag fade-in">Jemicit Blog</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3rem" class="fade-in">
+    
+    <div>
+      <h2 class="section-h2" style="margin-bottom:1.2rem">Words That<br><em>Inspire &amp; Impact</em></h2>
+      <p style="font-size:0.92rem;color:var(--muted);line-height:1.9;margin-bottom:2rem">"Empowering lives through words, ideas, and purpose-driven stories." The Jemicit Blog is a public space for reflection, learning, and meaningful conversation — covering youth empowerment, leadership, digital skills, faith, and career development.</p>
+      <a href="https://jemicit.blogspot.com" target="_blank" class="btn-primary" style="font-size:0.78rem;display:inline-block;margin-bottom:1.5rem">Visit Jemicit Blog →</a>
+      <div style="font-size:0.78rem;color:var(--muted);margin-top:1rem;line-height:1.8;border-left:2px solid var(--gold-dim);padding-left:1.2rem">
+        Topics covered: Youth Development · Career &amp; Employability · Leadership · Digital Skills · Faith &amp; Purpose · Event Recaps &amp; Insights
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:1px;background:var(--border)">
+      <a href="https://jemicit.blogspot.com/2024/11/guest-lecture-recap.html" target="_blank"
+         style="background:var(--navy2);padding:1.8rem;display:block;transition:background 0.2s;text-decoration:none"
+         onmouseover="this.style.background='var(--navy3)'" onmouseout="this.style.background='var(--navy2)'">
+        <div style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem">Nov 2024 · Event Recap</div>
+        <div style="font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:0.5rem;line-height:1.3">Guest Lecture Recap: Project Management Skills for Youth</div>
+        <div style="font-size:0.8rem;color:var(--muted);line-height:1.7">Key takeaways from PMI Tanzania's session at ISW on youth, employment, and the power of project management.</div>
+      </a>
+      <a href="https://jemicit.blogspot.com/2024/11/youth-are-youth-part-1.html" target="_blank"
+         style="background:var(--navy2);padding:1.8rem;display:block;transition:background 0.2s;text-decoration:none"
+         onmouseover="this.style.background='var(--navy3)'" onmouseout="this.style.background='var(--navy2)'">
+        <div style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem">Nov 2024 · Youth</div>
+        <div style="font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:0.5rem;line-height:1.3">Youth Are Youth – Part 1</div>
+        <div style="font-size:0.8rem;color:var(--muted);line-height:1.7">A reflection on youth identity, purpose, and the journey toward meaningful contribution in society.</div>
+      </a>
+      <a href="https://jemicit.blogspot.com/2024/11/discovering-your-passion.html" target="_blank"
+         style="background:var(--navy2);padding:1.8rem;display:block;transition:background 0.2s;text-decoration:none"
+         onmouseover="this.style.background='var(--navy3)'" onmouseout="this.style.background='var(--navy2)'">
+        <div style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem">Nov 2024 · Purpose</div>
+        <div style="font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:0.5rem;line-height:1.3">Discovering Your Passion</div>
+        <div style="font-size:0.8rem;color:var(--muted);line-height:1.7">A guide to identifying your purpose and aligning it with the life and work you were designed to do.</div>
+      </a>
+      <a href="https://jemicit.blogspot.com" target="_blank"
+         style="background:var(--navy3);padding:1.2rem 1.8rem;display:flex;align-items:center;justify-content:space-between;transition:background 0.2s;text-decoration:none"
+         onmouseover="this.style.background='var(--border2)'" onmouseout="this.style.background='var(--navy3)'">
+        <span style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);font-family:var(--font-display);font-weight:700">View All Posts</span>
+        <span style="color:var(--muted);font-size:0.85rem">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section id="about">
   <div class="about-copy fade-in">
     <div class="section-tag">About</div>
     <h2>Systems thinker.<br><em>Impact builder.</em><br>Purpose-driven.</h2>
-    <p>I am Joseph Ernest Mshana — a multidisciplinary professional working at the intersection of digital innovation, operational infrastructure, and community development in Tanzania and beyond.</p>
-    <p>With a BSc in Industrial Engineering Management from Mzumbe University and 5+ years spanning data systems, digital platforms, youth enterprise, and AI-assisted operations, I bring a structured engineering mindset to human-centered problems.</p>
-    <p>Known professionally as VA Jo, I operate under the Jemicit Impact Hub umbrella — a purpose-driven innovation ecosystem built to Think. Create. Build. Impact.</p>
-    <a href="https://linkedin.com/in/josephernestmshana" target="_blank" class="btn-outline" style="display:inline-block;margin-top:1.5rem">Connect on LinkedIn →</a>
+    <p>I am Joseph Ernest Mshana — a multidisciplinary, systems-driven professional working at the intersection of digital innovation, education technology, operational infrastructure, and community development. Highly adept at closing operational gaps by migrating manual workflows into structured, automated, and AI-enhanced digital ecosystems.</p>
+    <p>With a BSc in Industrial Engineering Management from Mzumbe University and a proven track record directing high-volume data quality assurance, steering a registered youth NGO, and mapping digital curriculums within the development and public sectors — I bring a systematic engineering mindset to human-centered social impact architectures.</p>
+    <p>Recognized nationally for documentation excellence and structural thinking, I operate professionally as <strong style="color:var(--gold)">VA Jo</strong> — the active service arm of <strong style="color:var(--gold)">Jemicit Impact Hub</strong>, a purpose-driven innovation ecosystem built on one philosophy: <em>Think. Create. Build. Impact.</em></p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem">
+      <a href="https://linkedin.com/in/josephernestmshana" target="_blank" class="btn-outline">LinkedIn →</a>
+      <a href="https://drive.google.com/file/d/1A7hNQ4LW_-PWpSmfVz-m5aNX8rpUuA65/view?usp=sharing" target="_blank" class="btn-primary" style="font-size:0.78rem">Download CV →</a>
+    </div>
 
     <div style="margin-top:3rem">
       <div class="section-tag" style="margin-bottom:1rem">Certifications</div>
@@ -1282,6 +1349,7 @@ footer{
     <a href="https://linkedin.com/in/josephernestmshana" target="_blank" class="channel-btn">LinkedIn</a>
     <a href="https://github.com/VA-Joseph" target="_blank" class="channel-btn">GitHub</a>
     <a href="https://youtube.com/@josephernestmshana" target="_blank" class="channel-btn">YouTube</a>
+    <a href="https://drive.google.com/file/d/1A7hNQ4LW_-PWpSmfVz-m5aNX8rpUuA65/view?usp=sharing" target="_blank" class="channel-btn">Download CV</a>
   </div>
 
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);max-width:900px;margin:0 auto" class="fade-in">
