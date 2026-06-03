@@ -87,15 +87,15 @@ nav{
   width:100%;
   height:100%;
   object-fit:cover;
-  object-position:center top;
+  object-position:center 15%;
   display:block;
-  filter:grayscale(10%);
-  opacity:0.55;
+  filter:grayscale(5%);
+  opacity:0.82;
 }
 .hero-photo::after{
   content:'';
   position:absolute;top:0;left:0;right:0;bottom:0;
-  background:linear-gradient(to right, var(--navy) 0%, rgba(7,9,26,0.6) 50%, transparent 100%);
+  background:linear-gradient(to right, var(--navy) 0%, rgba(7,9,26,0.4) 40%, rgba(7,9,26,0.05) 70%, transparent 100%);
   pointer-events:none;
 }
 .hero-photo::before{
@@ -431,10 +431,38 @@ footer{
   .nav-toggle{display:flex}
   .nav-cta{display:none}
 
-  #home{padding:5.5rem 1.5rem 3rem;min-height:auto}
-  .hero-photo{position:relative;width:100%;height:260px;margin-bottom:1.5rem;opacity:1}
-  .hero-photo img{opacity:0.7}
-  .hero-photo::after{background:linear-gradient(to right, transparent, transparent)}
+  #home{
+    padding:0 0 3rem;
+    min-height:auto;
+    display:flex;
+    flex-direction:column;
+  }
+  .hero-photo{
+    display:block !important;
+    position:relative !important;
+    width:100% !important;
+    height:70vw !important;
+    max-height:340px !important;
+    min-height:unset !important;
+    opacity:1 !important;
+    margin-bottom:0;
+    flex-shrink:0;
+  }
+  .hero-photo img{
+    opacity:1 !important;
+    object-position:center 20% !important;
+  }
+  .hero-photo::after{
+    background:linear-gradient(to bottom, transparent 50%, var(--navy) 100%) !important;
+  }
+  .hero-photo::before{display:none}
+  .fade-in[style*="max-width:65%"]{
+    max-width:100% !important;
+    padding:2rem 1.5rem 0 !important;
+  }
+  .hero-badge{font-size:0.65rem !important}
+  .hero-h1{font-size:2rem !important;margin-bottom:1.2rem !important}
+  .hero-sub{font-size:0.85rem !important;margin-bottom:1.5rem !important}
   .hero-h1{font-size:2.2rem}
   .fade-in[style*="max-width:65%"]{max-width:100% !important}
   .hero-sub{font-size:0.88rem}
@@ -632,13 +660,30 @@ section[id] {scroll-margin-top: 72px}
     gap:2.5rem !important;
   }
 }
+
+/* Back to top */
+.back-top{
+  position:fixed;bottom:2rem;right:1.5rem;
+  width:44px;height:44px;
+  background:var(--gold);color:var(--navy);
+  border:none;border-radius:2px;
+  font-size:1.1rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;
+  transition:opacity 0.3s;
+  z-index:90;
+  font-weight:700;
+  box-shadow:0 4px 16px rgba(0,0,0,0.4);
+}
+.back-top.visible{opacity:1;pointer-events:all}
+.back-top:hover{background:var(--gold2)}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-brand">VA Jo<span> / Jemicit</span></div>
+  <a href="#home" class="nav-brand" style="text-decoration:none">VA Jo<span> / Jemicit</span></a>
   <div class="nav-links">
     <a href="#work">Work</a>
     <a href="#services">Services</a>
@@ -658,6 +703,7 @@ section[id] {scroll-margin-top: 72px}
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  <a href="#home" onclick="document.getElementById('mobileMenu').classList.remove('open')" style="color:var(--gold)">Home</a>
   <a href="#work" onclick="document.getElementById('mobileMenu').classList.remove('open')">Work</a>
   <a href="#services" onclick="document.getElementById('mobileMenu').classList.remove('open')">Services</a>
   <a href="#ailab" onclick="document.getElementById('mobileMenu').classList.remove('open')">AI Lab</a>
@@ -1404,11 +1450,24 @@ section[id] {scroll-margin-top: 72px}
   <div style="color:var(--muted);font-size:0.72rem">Think. Create. Build. Impact. · Dar es Salaam, TZ</div>
 </footer>
 
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
 <script>
-const obs=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
-},{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
-document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+// Back to top visibility
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('visible', window.scrollY > 400);
+});
+
+// Intersection observer for fade-ins
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}
+  });
+}, {threshold:0.1, rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 </script>
+
 </body>
 </html>
