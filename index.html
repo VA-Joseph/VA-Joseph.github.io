@@ -68,41 +68,34 @@ nav{
 /* HERO */
 #home{
   min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:4rem;
+  align-items:flex-end;
   padding:0 4rem 6rem;
   position:relative;
   overflow:hidden;
 }
 .hero-photo{
-  position:absolute;
-  top:0;right:0;
-  width:38%;
-  height:100%;
+  position:relative;
+  align-self:stretch;
+  display:flex;align-items:flex-end;
   overflow:hidden;
-  pointer-events:none;
+  min-height:60vh;
 }
 .hero-photo img{
   width:100%;
   height:100%;
   object-fit:cover;
-  object-position:center 15%;
+  object-position:center top;
   display:block;
-  filter:grayscale(5%);
-  opacity:0.82;
+  filter:grayscale(10%);
 }
 .hero-photo::after{
   content:'';
-  position:absolute;top:0;left:0;right:0;bottom:0;
-  background:linear-gradient(to right, var(--navy) 0%, rgba(7,9,26,0.4) 40%, rgba(7,9,26,0.05) 70%, transparent 100%);
-  pointer-events:none;
-}
-.hero-photo::before{
-  content:'';
-  position:absolute;bottom:0;left:0;right:0;height:30%;
+  position:absolute;bottom:0;left:0;right:0;height:40%;
   background:linear-gradient(to top,var(--navy),transparent);
-  pointer-events:none;z-index:1;
+  pointer-events:none;
 }
 .hero-badge{
   display:inline-flex;align-items:center;gap:0.5rem;
@@ -115,12 +108,12 @@ nav{
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
 .hero-h1{
   font-family:var(--font-display);
-  font-size:clamp(2.8rem,5.5vw,5.5rem);
+  font-size:clamp(3.2rem,7vw,6.5rem);
   font-weight:800;
   line-height:1.0;
   letter-spacing:-0.02em;
   margin-bottom:2.5rem;
-  max-width:680px;
+  max-width:900px;
 }
 .hero-h1 em{font-style:normal;color:var(--gold)}
 .hero-sub{
@@ -400,28 +393,18 @@ footer{
 .mobile-menu{
   display:none;position:fixed;top:0;left:0;right:0;bottom:0;
   background:var(--navy);z-index:99;
-  flex-direction:column;align-items:center;justify-content:center;
-  gap:0;overflow-y:auto;
-  padding:4.5rem 2rem 2rem;
+  flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;
 }
 .mobile-menu.open{display:flex}
 .mobile-menu a{
-  font-family:var(--font-display);font-size:1.35rem;font-weight:700;
+  font-family:var(--font-display);font-size:1.8rem;font-weight:700;
   color:var(--white);letter-spacing:-0.01em;
-  padding:0.75rem 0;
-  border-bottom:1px solid var(--border);
-  width:100%;text-align:center;
 }
-.mobile-menu a:last-of-type{border-bottom:none}
 .mobile-menu a:hover{color:var(--gold)}
-.mobile-menu .btn-primary{
-  margin-top:1.5rem;width:100%;text-align:center;
-  font-size:0.78rem;padding:0.9rem 2rem;
-}
 .mobile-close{
-  position:fixed;top:1.2rem;right:1.5rem;
-  font-size:1.3rem;cursor:pointer;color:var(--muted);
-  background:none;border:none;z-index:100;
+  position:absolute;top:1.5rem;right:1.5rem;
+  font-size:1.5rem;cursor:pointer;color:var(--muted);
+  background:none;border:none;
 }
 
 /* MOBILE LAYOUT */
@@ -431,40 +414,9 @@ footer{
   .nav-toggle{display:flex}
   .nav-cta{display:none}
 
-  #home{
-    padding:0 0 3rem;
-    min-height:auto;
-    display:flex;
-    flex-direction:column;
-  }
-  .hero-photo{
-    display:block !important;
-    position:relative !important;
-    width:100% !important;
-    height:70vw !important;
-    max-height:340px !important;
-    min-height:unset !important;
-    opacity:1 !important;
-    margin-bottom:0;
-    flex-shrink:0;
-  }
-  .hero-photo img{
-    opacity:1 !important;
-    object-position:center 20% !important;
-  }
-  .hero-photo::after{
-    background:linear-gradient(to bottom, transparent 50%, var(--navy) 100%) !important;
-  }
-  .hero-photo::before{display:none}
-  .fade-in[style*="max-width:65%"]{
-    max-width:100% !important;
-    padding:2rem 1.5rem 0 !important;
-  }
-  .hero-badge{font-size:0.65rem !important}
-  .hero-h1{font-size:2rem !important;margin-bottom:1.2rem !important}
-  .hero-sub{font-size:0.85rem !important;margin-bottom:1.5rem !important}
-  .hero-h1{font-size:2.2rem}
-  .fade-in[style*="max-width:65%"]{max-width:100% !important}
+  #home{padding:6rem 1.5rem 3rem;min-height:auto;grid-template-columns:1fr;gap:2rem}
+  .hero-photo{min-height:320px;max-height:420px}
+  .hero-h1{font-size:2.4rem}
   .hero-sub{font-size:0.88rem}
   .hero-meta,.hero-num,.hero-line{display:none}
   .hero-btns{flex-direction:column}
@@ -650,9 +602,8 @@ footer{
 .eco-role{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);padding:0.2rem 0.6rem;border:1px solid var(--gold-dim);border-radius:2px;white-space:nowrap}
 
 /* Scroll offset for fixed nav */
-section[id] {scroll-margin-top: 72px}
+section, div[id] {scroll-margin-top: 80px}
 #home {scroll-margin-top: 0}
-.mobile-menu {scroll-margin-top: 0}
 
 @media(max-width:768px){
   #blog > div[style*="grid-template-columns:1fr 1fr"]{
@@ -660,30 +611,13 @@ section[id] {scroll-margin-top: 72px}
     gap:2.5rem !important;
   }
 }
-
-/* Back to top */
-.back-top{
-  position:fixed;bottom:2rem;right:1.5rem;
-  width:44px;height:44px;
-  background:var(--gold);color:var(--navy);
-  border:none;border-radius:2px;
-  font-size:1.1rem;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  opacity:0;pointer-events:none;
-  transition:opacity 0.3s;
-  z-index:90;
-  font-weight:700;
-  box-shadow:0 4px 16px rgba(0,0,0,0.4);
-}
-.back-top.visible{opacity:1;pointer-events:all}
-.back-top:hover{background:var(--gold2)}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="#home" class="nav-brand" style="text-decoration:none">VA Jo<span> / Jemicit</span></a>
+  <div class="nav-brand">VA Jo<span> / Jemicit</span></div>
   <div class="nav-links">
     <a href="#work">Work</a>
     <a href="#services">Services</a>
@@ -703,7 +637,6 @@ section[id] {scroll-margin-top: 72px}
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
-  <a href="#home" onclick="document.getElementById('mobileMenu').classList.remove('open')" style="color:var(--gold)">Home</a>
   <a href="#work" onclick="document.getElementById('mobileMenu').classList.remove('open')">Work</a>
   <a href="#services" onclick="document.getElementById('mobileMenu').classList.remove('open')">Services</a>
   <a href="#ailab" onclick="document.getElementById('mobileMenu').classList.remove('open')">AI Lab</a>
@@ -721,7 +654,7 @@ section[id] {scroll-margin-top: 72px}
   <div class="hero-line"></div>
   <div class="hero-num">JEM — 2026©</div>
 
-  <div class="fade-in" style="position:relative;z-index:2;max-width:65%">
+  <div class="fade-in">
     <div class="hero-badge">
       <span></span>Digital Innovation &amp; Impact Specialist &nbsp;·&nbsp; Dar es Salaam, Tanzania
     </div>
@@ -760,12 +693,12 @@ section[id] {scroll-margin-top: 72px}
     <div class="work-card fade-in">
       <div class="work-num">01 — Education Technology</div>
       <div class="work-tag">#DigitalLearning #SITOS X</div>
-      <h3>Shule Direct — VLE Content & Platform Work</h3>
-      <p>Contributed to curriculum-based content mapping and quality assurance for Zanzibar's Virtual Learning Experience (VLE) project across primary and secondary levels. Helped develop and optimize digital courses on the SITOS X platform. Spearheaded the SD Ideas Hub, an internal innovation space fostering team creativity and collaboration. Provided editorial assistance toward the 2024 Annual Report. Facilitated branding sessions for women entrepreneurs under the Ndoto Hub partnership.</p>
+      <h3>Shule Direct</h3>
+      <p>Contributed to curriculum-based content mapping and quality assurance for Zanzibar's Virtual Learning Experience (VLE) project across primary and secondary levels. Helped develop and optimize pilot digital courses on the SITOS X platform. Spearheaded the SD Ideas Hub, an internal innovation space fostering team creativity and collaboration. Provided editorial assistance toward the 2024 Annual Report. Facilitated branding sessions for women entrepreneurs under the Ndoto Hub partnership.</p>
       <div class="work-metrics">
-        <div class="metric"><strong>VLE</strong>Zanzibar Platform</div>
-        <div class="metric"><strong>Jun–Nov</strong>2025</div>
-        <div class="metric"><strong>SD Ideas Hub</strong>Founder</div>
+        <div class="metric"><strong>VLE Platform</strong>Content Manager</div>
+        <div class="metric"><strong>Branding & Communications Training</strong>Facilitator</div>
+        <div class="metric"><strong>SD Ideas Hub</strong>Founder & Facilitator</div>
       </div>
     </div>
 
@@ -773,11 +706,11 @@ section[id] {scroll-margin-top: 72px}
       <div class="work-num">02 — Data Systems & MEAL</div>
       <div class="work-tag">#SurveyCTO #DataIntegrity</div>
       <h3>Educate! MEWAKA Baseline Survey</h3>
-      <p>Conducted quantitative field surveys across 2 secondary schools in Kondoa, Dodoma, using 140 physical questionnaires. Performed SurveyCTO tool testing, quality control, and data entry. Identified, documented, and reported 10+ critical form errors — including skip logic failures and Kiswahili-English translation mismatches — leading to tool revisions before official deployment.</p>
+      <p>Conducted quantitative field surveys with 1, 3, and 4 students across 2 secondary schools in Kondoa, Dodoma, using 140 physical questionnaires. Performed SurveyCTO tool testing, quality control, and data entry. Identified, documented, and reported 10+ critical form errors — including skip logic failures and Kiswahili-English translation mismatches — leading to tool revisions before official deployment.</p>
       <div class="work-metrics">
         <div class="metric"><strong>140</strong>Questionnaires / 2 Schools</div>
         <div class="metric"><strong>10+</strong>Critical Bugs Fixed</div>
-        <div class="metric"><strong>2</strong>Schools · Kondoa, Dodoma</div>
+        <div class="metric"><strong>2</strong>Schools · Dodoma</div>
       </div>
     </div>
 
@@ -785,7 +718,7 @@ section[id] {scroll-margin-top: 72px}
       <div class="work-num">03 — Field Statistics</div>
       <div class="work-tag">#NBS #FieldOperations</div>
       <h3>National Bureau of Statistics — Trade & NPISH Surveys</h3>
-      <p>Executed over 10,000 accurate statistical data entries across national commercial frameworks, consistently exceeding baseline performance targets by 30%. Negotiated community entry and conducted 70+ structured face-to-face interviews with business directors and civil society executives following strict state methodologies.</p>
+      <p>Executed over 10,000 accurate statistical data entries across national commercial frameworks, consistently exceeding baseline performance targets by 30%. Negotiated community entry and conducted 70+ structured face-to-face interviews with business directors and civil society executives following state methodologies.</p>
       <div class="work-metrics">
         <div class="metric"><strong>10,000+</strong>Data Entries</div>
         <div class="metric"><strong>+30%</strong>vs. Target</div>
@@ -796,12 +729,12 @@ section[id] {scroll-margin-top: 72px}
     <div class="work-card fade-in">
       <div class="work-num">04 — Digital Inclusion</div>
       <div class="work-tag">#YouthEnterprise #Mastercard</div>
-      <h3>Sheria Kiganjani — Going Beyond Digital Business Program</h3>
-      <p>Mobilized over 100 young entrepreneurs to participate in the Going Beyond project, driving digital inclusion and enterprise growth. Facilitated the Digital Business Program, providing coaching and mentorship for sustainable business development. Connected participants to ecosystem partners for funding, mentorship, and sector-specific support.</p>
+      <h3>Sheria Kiganjani — Going Beyond Project</h3>
+      <p>Mobilized over 100 young entrepreneurs to participate in the Going Beyond project, driving digital inclusion and enterprise growth. Facilitated the Digital Business Program, under the Going Beyond project, providing coaching and mentorship for sustainable business development. Connected participants to ecosystem partners for funding, mentorship, and sector-specific support.</p>
       <div class="work-metrics">
         <div class="metric"><strong>100+</strong>Youth Mobilized</div>
-        <div class="metric"><strong>DOT / MF</strong>Partnership</div>
-        <div class="metric"><strong>2024–25</strong>Duration</div>
+        <div class="metric"><strong>DOT & Mastercard Foundation</strong>Partnership</div>
+        <div class="metric"><strong>2024–2025</strong>Duration</div>
       </div>
     </div>
   </div>
@@ -1098,11 +1031,11 @@ section[id] {scroll-margin-top: 72px}
 
   <div class="exp-list">
     <div class="exp-row fade-in">
-      <div class="exp-date">Jan 2026 – Present</div>
+      <div class="exp-date">Jan – March 2026</div>
       <div>
         <div class="exp-role">Quantitative Enumerator — MEWAKA Baseline Survey</div>
-        <div class="exp-org">Educate! · Kondoa, Dodoma</div>
-        <div class="exp-desc">Quantitative field surveys in 2 secondary schools in Kondoa, Dodoma — 140 physical questionnaires per school. SurveyCTO data entry, tool testing, and quality control in Dar es Salaam. Documented 10+ critical form errors. Guided peers on platform version control and data integrity.</div>
+        <div class="exp-org">Educate! · Dar es Salaam & Dodoma</div>
+        <div class="exp-desc">Quantitative field surveys in 2 secondary schools in Kondoa, Dodoma — 140 physical questionnaires. SurveyCTO tool testing, quality control, and data entry in Dar es Salaam. Documented 10+ critical form errors. Guided peers on platform version control and data integrity.</div>
       </div>
       <div class="exp-badge">Active</div>
     </div>
@@ -1111,7 +1044,7 @@ section[id] {scroll-margin-top: 72px}
       <div>
         <div class="exp-role">Content Manager (Consultant)</div>
         <div class="exp-org">Shule Direct · Dar es Salaam</div>
-        <div class="exp-desc">Content mapping and QA for Zanzibar's VLE project. SITOS X course development. Founded and facilitated the SD Ideas Hub. Editorial assistance on 2024 Annual Report. Facilitated branding sessions for Ndoto Hub women entrepreneurs.</div>
+        <div class="exp-desc">Content mapping and QA for Zanzibar's VLE project. SITOS X pilot course development. Founded and facilitated the SD Ideas Hub. Editorial assistance on 2024 Annual Report. Facilitated branding sessions for Ndoto Hub women entrepreneurs.</div>
       </div>
       <div class="exp-badge">EdTech</div>
     </div>
@@ -1120,7 +1053,7 @@ section[id] {scroll-margin-top: 72px}
       <div>
         <div class="exp-role">Youth Leader & Digital Business Program Facilitator</div>
         <div class="exp-org">Sheria Kiganjani / DOT / Mastercard Foundation</div>
-        <div class="exp-desc">Mobilized 100+ youth entrepreneurs to participate in the Going Beyond project. Facilitated the Digital Business Program — coaching and mentorship for sustainable business development. Connected participants to ecosystem partners, funding, and sector-specific support.</div>
+        <div class="exp-desc">Mobilized 100+ youth entrepreneurs to participate in the Going Beyond project. Facilitated the Digital Business Program — coaching and mentorship for digital skills and sustainable business development. Connected participants to ecosystem partners, funding, and sector-specific support.</div>
       </div>
       <div class="exp-badge">Youth Dev</div>
     </div>
@@ -1358,17 +1291,17 @@ section[id] {scroll-margin-top: 72px}
     <p>Recognized nationally for documentation excellence and structural thinking, I operate professionally as <strong style="color:var(--gold)">VA Jo</strong> — the active service arm of <strong style="color:var(--gold)">Jemicit Impact Hub</strong>, a purpose-driven innovation ecosystem built on one philosophy: <em>Think. Create. Build. Impact.</em></p>
     <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem">
       <a href="https://linkedin.com/in/josephernestmshana" target="_blank" class="btn-outline">LinkedIn →</a>
-      <a href="https://drive.google.com/file/d/1A7hNQ4LW_-PWpSmfVz-m5aNX8rpUuA65/view?usp=sharing" target="_blank" class="btn-primary" style="font-size:0.78rem">Download CV →</a>
+      <a href="https://drive.google.com/drive/folders/1qQWFQzlYggo2pdYZ61UtyfNTwJM2D_CD?usp=drive_link" target="_blank" class="btn-primary" style="font-size:0.78rem">Download CV →</a>
     </div>
 
     <div style="margin-top:3rem">
       <div class="section-tag" style="margin-bottom:1rem">Certifications</div>
       <ul class="certs-list">
+        <li>AI for Software Engineering <span>PLP Africa · 2025</span></li>
+        <li>Product Management Course <span>BeTechified · 2025</span></li>
         <li>Certified Virtual Assistant <span>ALX Africa · 2022</span></li>
-        <li>Software Development & AI Application <span>PLP Africa · 2025</span></li>
-        <li>Product Management Specialization <span>BeTechified · 2025</span></li>
         <li>Lean Six Sigma White Belt <span>MF Treinamentos · 2022</span></li>
-        <li>Graduate Entrepreneurship <span>UDSM Innovation Centre · 2021</span></li>
+        <li>Graduate Entrepreneurship Program <span>UDSM Innovation & Entrepreneurship Centre · 2021</span></li>
       </ul>
     </div>
   </div>
@@ -1395,10 +1328,10 @@ section[id] {scroll-margin-top: 72px}
     <div style="margin-top:2rem;border:1px solid var(--border2);padding:2rem">
       <div class="section-tag" style="margin-bottom:1rem">Awards & Recognition</div>
       <div style="font-size:0.82rem;color:var(--muted);line-height:2.2">
-        🏆 Winner — National Niajiri CV Competition, 2024<br>
+        🏆 First Winner — National Niajiri CV Competition, 2024<br>
         🏅 Outstanding Presentation — Employability Africa, 2022<br>
         📋 Best Field Report — Mzumbe University, 2020<br>
-        💡 Innovator/Finalist — Arusha Innovation Challenge, 2020
+        💡 Innovator/Participant — Arusha Innovation Challenge, 2020
       </div>
     </div>
   </div>
@@ -1450,24 +1383,11 @@ section[id] {scroll-margin-top: 72px}
   <div style="color:var(--muted);font-size:0.72rem">Think. Create. Build. Impact. · Dar es Salaam, TZ</div>
 </footer>
 
-
-<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
-
 <script>
-// Back to top visibility
-const backTop = document.getElementById('backTop');
-window.addEventListener('scroll', () => {
-  backTop.classList.toggle('visible', window.scrollY > 400);
-});
-
-// Intersection observer for fade-ins
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}
-  });
-}, {threshold:0.1, rootMargin:'0px 0px -60px 0px'});
-document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+},{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
 </script>
-
 </body>
 </html>
