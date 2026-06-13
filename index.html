@@ -58,7 +58,7 @@ nav{
   color:var(--gold);
 }
 .nav-brand span{color:var(--white);font-weight:400}
-.nav-links{display:flex;gap:2.5rem;font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}
+.nav-links{display:flex;gap:1.2rem;font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)}
 .nav-links a:hover{color:var(--gold);transition:color 0.2s}
 .nav-cta{
   font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;
@@ -77,6 +77,7 @@ nav{
   flex-direction:column;
   justify-content:flex-end;
   padding:0 4rem 6rem;
+  padding-top:80px;
   position:relative;
   overflow:hidden;
 }
@@ -427,7 +428,7 @@ footer{
   .nav-cta{display:none}
 
   #home{
-    padding:0 0 3rem;
+    padding:70px 0 3rem;
     min-height:auto;
     display:flex;
     flex-direction:column;
@@ -454,7 +455,8 @@ footer{
     max-width:100% !important;
     padding:2rem 1.5rem 0 !important;
   }
-  .hero-badge{font-size:0.65rem !important}
+  .hero-badge{font-size:0.65rem !important;max-width:100% !important}
+  .fade-in[style*="max-width:65%"]{max-width:100% !important;padding:1.5rem 1.5rem 0 !important}
   .hero-h1{font-size:2rem !important;margin-bottom:1.2rem !important}
   .hero-sub{font-size:0.85rem !important;margin-bottom:1.5rem !important}
   .hero-h1{font-size:2.2rem}
@@ -682,7 +684,7 @@ section[id] {scroll-margin-top: 72px}
     <a href="#work">Work</a>
     <a href="#services">Services</a>
     <a href="#ailab">AI Lab</a>
-    <a href="#scoutcreations">Scout Creations</a>
+    <a href="#scoutcreations">Creations</a>
     <a href="#experience">Experience</a>
     <a href="#jemicitlab">Jemicit Lab</a>
     <a href="#vision">Vision</a>
@@ -721,7 +723,8 @@ section[id] {scroll-margin-top: 72px}
 
   <div class="fade-in" style="position:relative;z-index:2;max-width:65%">
     <div class="hero-badge">
-      <span></span>Digital Innovation &amp; Impact Specialist &nbsp;·&nbsp; Dar es Salaam, Tanzania
+      Digital Innovation &amp; Impact Specialist &nbsp;·&nbsp; Design Thinker &nbsp;·&nbsp; Youth Advocate<br>
+      <span style="font-size:0.68rem;opacity:0.8;letter-spacing:0.1em">Dar es Salaam, Tanzania</span>
     </div>
     <h1 class="hero-h1">I build the<br><em>digital architecture</em><br>for world-changing ideas.</h1>
     <p class="hero-sub">Moving individuals, social enterprises, and development agencies away from manual workflows into structured, AI-enhanced impact systems.</p>
