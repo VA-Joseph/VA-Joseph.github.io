@@ -255,13 +255,22 @@ section{padding:7rem 4rem}
 .lab-engine ul{list-style:none;font-size:0.85rem;color:var(--muted);line-height:2}
 .lab-engine ul li::before{content:'→ ';color:var(--gold)}
 
-.music-table{width:100%;border-collapse:collapse;margin-top:2rem;font-size:0.85rem}
+.music-table{width:100%;border-collapse:collapse;margin-top:2rem;font-size:0.82rem;table-layout:fixed}
 .music-table th{
   font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;
   color:var(--gold);border-bottom:1px solid var(--border2);
-  padding:0.6rem 1rem;text-align:left;
+  padding:0.6rem 0.8rem;text-align:left;
+  overflow:hidden;
 }
-.music-table td{padding:0.9rem 1rem;border-bottom:1px solid var(--border);color:var(--muted)}
+.music-table td{
+  padding:0.7rem 0.8rem;
+  overflow-wrap:break-word;
+  word-break:break-word;
+}
+.music-table th:nth-child(1), .music-table td:nth-child(1){width:42%}
+.music-table th:nth-child(2), .music-table td:nth-child(2){width:42%}
+.music-table th:nth-child(3), .music-table td:nth-child(3){width:16%;text-align:center}
+.music-table td{border-bottom:1px solid var(--border);color:var(--muted)}
 .music-table tr:last-child td{border-bottom:none}
 .music-table a{color:var(--gold2);font-size:0.78rem;letter-spacing:0.05em}
 .music-table a:hover{text-decoration:underline}
@@ -913,34 +922,60 @@ section[id] {scroll-margin-top: 72px}
     </div>
   </div>
 
-  <!-- Category 4: AI Consultancy (NEW) -->
+  <!-- Category 4: AI Active Build Labs -->
   <div class="svc-category fade-in">
-    <div class="svc-cat-title">04 — AI Consultancy &amp; Workflow Automation <span style="color:var(--gold-dim);font-size:0.6rem;margin-left:0.5rem">NEW</span></div>
+    <div class="svc-cat-title">04 — AI Active Build Labs <span style="color:var(--gold-dim);font-size:0.6rem;margin-left:0.5rem">JEMICIT IMPACT FRAMEWORK</span></div>
+
+    <!-- Framework intro block -->
+    <div style="border-left:2px solid var(--gold-dim);padding:1.2rem 1.5rem;margin-bottom:2rem;background:rgba(184,150,62,0.04)">
+      <div style="font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:0.6rem">The T.C.B.I. Model · Think. Create. Build. Impact.</div>
+      <p style="font-size:0.85rem;color:var(--muted);line-height:1.9;margin:0 0 1rem">Most people use AI as a search engine. These sessions are different. Using the <strong style="color:var(--white)">Jemicit Impact Framework</strong> — built on Design Thinking, Systems Thinking, Process Thinking, and AI Thinking — we sit together, open our laptops, and build your custom AI engine from the ground up. Not lectures. Not slides. Active, hands-on co-creation.</p>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.85;margin:0 0 1rem">This portfolio itself is a live example of the framework in action.</p>
+      <div style="font-size:0.72rem;color:var(--muted);margin-bottom:0.5rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em">Where are you right now?</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;font-size:0.75rem">
+        <span style="background:var(--navy3);border:1px solid var(--border2);padding:0.3rem 0.7rem;color:var(--muted)">① Searcher — using AI to look things up</span>
+        <span style="background:var(--navy3);border:1px solid var(--border2);padding:0.3rem 0.7rem;color:var(--muted)">② Assistant — letting AI help with tasks</span>
+        <span style="background:var(--navy3);border:1px solid var(--gold-dim);padding:0.3rem 0.7rem;color:var(--gold)">③ Thought Partner — thinking with AI</span>
+        <span style="background:var(--navy3);border:1px solid var(--gold-dim);padding:0.3rem 0.7rem;color:var(--gold)">④ Builder — engineering AI into your work</span>
+      </div>
+      <p style="font-size:0.78rem;color:var(--muted);margin:0.8rem 0 0;font-style:italic">We meet you where you are and build toward where you need to be.</p>
+    </div>
+
+    <!-- Package grid -->
     <div class="svc-grid">
       <div class="svc-item">
-        <div class="svc-price">From 25,000 TZS</div>
-        <div class="svc-name">AI Tools Onboarding Session</div>
-        <div class="svc-desc">1-on-1 guided session on using Claude, ChatGPT, and AI tools for your work — practical, hands-on, results-focused.</div>
-        <div class="svc-badge">1 hr session</div>
+        <div class="svc-price">150,000 – 200,000 TZS</div>
+        <div class="svc-name">Individual Active Build Lab</div>
+        <div class="svc-desc">3 hands-on sessions (~7–8 hrs total). Profile review, SWOT/needs assessment, custom AI engine setup, memory files, and personalized workflow design. Built for solo professionals, consultants, and entrepreneurs.</div>
+        <div class="svc-badge">3 sessions · In-person</div>
       </div>
       <div class="svc-item">
-        <div class="svc-price">From 45,000 TZS</div>
-        <div class="svc-name">Claude / ChatGPT Setup &amp; Configuration</div>
-        <div class="svc-desc">Set up and configure AI tools (Claude Projects, ChatGPT custom GPTs, connectors) tailored to your workflow and business needs.</div>
-        <div class="svc-badge">Includes walkthrough</div>
+        <div class="svc-price">300,000 – 800,000 TZS</div>
+        <div class="svc-name">Focus Group Active Build Lab</div>
+        <div class="svc-desc">For teams of 3–8 people with shared workflows. Half-day intensive or multi-session program. Team AI engine design, shared templates, collaborative workflow architecture. Flat rate — split across the group.</div>
+        <div class="svc-badge">1–3 sessions · In-person</div>
       </div>
       <div class="svc-item">
-        <div class="svc-price">From 50,000 TZS</div>
-        <div class="svc-name">AI Workflow Design</div>
-        <div class="svc-desc">Map and build an AI-assisted workflow system for your team or business — from inbox automation to research pipelines.</div>
-        <div class="svc-badge">Custom delivery</div>
+        <div class="svc-price">500,000 – 2,000,000 TZS</div>
+        <div class="svc-name">Corporate / Organizational Build Lab</div>
+        <div class="svc-desc">Discovery workshop through full program delivery — workflow mapping, hands-on team training, institutional AI framework design, custom workspace setup, and documentation. For SMEs, NGOs, and institutions. Enterprise-scale programs quoted separately.</div>
+        <div class="svc-badge">Full program · Custom scope</div>
       </div>
       <div class="svc-item">
-        <div class="svc-price">Custom Quote</div>
-        <div class="svc-name">AI Strategy Consultation</div>
-        <div class="svc-desc">Strategic advisory on integrating AI tools into your organization, NGO, or startup — framework, tools, and implementation roadmap.</div>
-        <div class="svc-badge">On Request</div>
+        <div class="svc-price">80,000 – 500,000 TZS / mo</div>
+        <div class="svc-name">Monthly Build Lab Retainer</div>
+        <div class="svc-desc">Ongoing support, iteration, and system evolution. Regular check-ins, prompt optimization, onboarding new team members, and workflow upgrades as your needs grow. Rate scales with team size and scope.</div>
+        <div class="svc-badge">Monthly · All client types</div>
       </div>
+    </div>
+
+    <div style="margin-top:1.5rem;padding:1rem 1.2rem;background:var(--navy2);border:1px solid var(--border)">
+      <p style="font-size:0.78rem;color:var(--muted);line-height:1.8;margin:0">
+        <strong style="color:var(--white)">How to begin:</strong> A 15-minute Discovery Call → a recommended package → we open our laptops and build. &nbsp;
+        <strong style="color:var(--white)">Format:</strong> In-person (primary · Dar es Salaam). Hybrid available. Virtual on request. &nbsp;
+        <strong style="color:var(--white)">Venue:</strong> Client's office or preferred location. Travel outside Dar es Salaam quoted separately. &nbsp;
+        <strong style="color:var(--white)">First clients:</strong> Founding rate available in exchange for a detailed case study or testimonial.
+      </p>
     </div>
   </div>
 
@@ -1019,8 +1054,8 @@ section[id] {scroll-margin-top: 72px}
   <div style="margin-top:4rem" class="fade-in">
     <div id="scoutcreations" style="scroll-margin-top:80px"></div>
     <div class="section-tag">Creative AI Production</div>
-    <h3 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;margin-bottom:0.5rem">Gospel Music Archive · Suno AI</h3>
-    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.2rem;line-height:1.85">For years, Joseph carried over 200 original compositions — songs, melodies, poems, and lyrics written through seasons of prayer, struggle, and longing. In April, 2026, using Suno AI, he began converting this silent archive into full-gospel recordings: 158 master-grade tracks across English (47), Kiswahili (90), and Korean (1), plus instrumentals (20); and 18 thematic albums (16 curated playlists on YouTube). Not just music production — a decade of private worship and praise finally given sound.</p>
+    <h3 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;margin-bottom:0.5rem">Heart Of Worship Series · Gospel Archive</h3>
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.2rem;line-height:1.85">A living gospel archive born in secondary school at Ifunda (2015–2017) — songs composed in faith, carried in silence for years, recorded outdoors in a prayer field called "Valley" in 2020, and finally given full production through Suno AI from 2024. Today: <strong style="color:var(--white)">167 total tracks</strong> — 9 original raw recordings (2020) + 142 AI-assisted songs across 16 thematic playlists on YouTube &amp; Suno, plus 16 instrumentals. Three languages: 90 Kiswahili · 47 English · 1 Korean. Under Scout Creations / MademidinChrist. The tool arrived. The songs were always there.</p>
     <table class="music-table">
       <thead>
         <tr>
@@ -1036,17 +1071,17 @@ section[id] {scroll-margin-top: 72px}
         <tr><td>4. NISEMEZANE NAWE</td><td>Soulful Personal Devotion Series</td><td><a href="https://youtube.com/playlist?list=PLRStO-_GVLw1mIBEm0aV2-TG3HHv3d7Ey" target="_blank">YouTube →</a></td></tr>
         <tr><td>5. GLORY BE TO GOD</td><td>Worship &amp; Praise Collection</td><td><a href="https://youtube.com/playlist?list=PLRStO-_GVLw1sD6q6i3YFykfQ_QeJkv5w" target="_blank">YouTube →</a></td></tr>
         <tr><td>6. TUNAKUTAZAMA</td><td>Worship &amp; Praise Collection</td><td><a href="https://youtube.com/playlist?list=PLRStO-_GVLw3K8s-4_2rfftMAUVYTvXMZ" target="_blank">YouTube →</a></td></tr>
-        <tr><td>7. MUNGU MTAKATIFU</td><td>Worship &amp; Adoration Collection</td><td><a href="https://www.youtube.com/playlist?list=PLRStO-_GVLw2IFuZ55Sx8P9Yd5yctRA3y" target="_blank">YouTube →</a></td></tr>
-        <tr><td>8. TO SEE THAT DAY</td><td>Songs About the Hope of Eternity</td><td><a href="https://www.youtube.com/playlist?list=PLRStO-_GVLw3n4MrJ6QnqmE1GROjsk8oK" target="_blank">YouTube →</a></td></tr>
+        <tr><td>7. MUNGU MTAKATIFU</td><td>Worship &amp; Adoration</td><td><a href="https://www.youtube.com/playlist?list=PLRStO-_GVLw2IFuZ55Sx8P9Yd5yctRA3y" target="_blank">YouTube →</a></td></tr>
+        <tr><td>8. TO SEE THAT DAY</td><td>Songs of Hope &amp; Eternity</td><td><a href="https://www.youtube.com/playlist?list=PLRStO-_GVLw3n4MrJ6QnqmE1GROjsk8oK" target="_blank">YouTube →</a></td></tr>
         <tr><td>9. WEWE NI MWEMA</td><td>Songs of God's Goodness</td><td><a href="https://www.youtube.com/playlist?list=PLRStO-_GVLw13cg4rJmfpwzrutMxqtIgb" target="_blank">YouTube →</a></td></tr>
-        <tr><td>10. USIKU WA MANANE</td><td>A Gospel Praise Collection</td><td><a href="https://www.youtube.com/playlist?list=PLfU-ISLMavw8" target="_blank">YouTube →</a></td></tr>
-        <tr><td>11. NATAMANI KUWA KAMA BWANA</td><td>A Devotional Worship Collection</td><td><a href="https://www.youtube.com/playlist?list=PLXB9VXsJVXeM" target="_blank">YouTube →</a></td></tr>
+        <tr><td>10. USIKU WA MANANE</td><td>Gospel Praise Collection</td><td><a href="https://www.youtube.com/playlist?list=PLfU-ISLMavw8" target="_blank">YouTube →</a></td></tr>
+        <tr><td>11. NATAMANI KUWA KAMA BWANA</td><td>Devotional Worship</td><td><a href="https://www.youtube.com/playlist?list=PLXB9VXsJVXeM" target="_blank">YouTube →</a></td></tr>
         <tr><td>12. BWANA NI MKUU</td><td>A Praise Collection</td><td><a href="https://www.youtube.com/playlist?list=PLFBJTCqOUtf4" target="_blank">YouTube →</a></td></tr>
-        <tr><td>13. TUNAKUNGOJA</td><td>Songs of Waiting on the Lord</td><td><a href="https://www.youtube.com/playlist?list=PLZCj8sa_ty80" target="_blank">YouTube →</a></td></tr>
+        <tr><td>13. TUNAKUNGOJA</td><td>Songs of Waiting</td><td><a href="https://www.youtube.com/playlist?list=PLZCj8sa_ty80" target="_blank">YouTube →</a></td></tr>
         <tr><td>14. SONG OF HEAVEN</td><td>A Worship Collection</td><td><a href="https://www.youtube.com/playlist?list=PLF_3pLgVSCVQ" target="_blank">YouTube →</a></td></tr>
         <tr><td>15. NITAWEZA KUVUKA</td><td>Songs of Victory & Breakthrough</td><td><a href="https://www.youtube.com/playlist?list=PLFueDLErCYCg" target="_blank">YouTube →</a></td></tr>
         <tr><td>16. SONGS OF THANKSGIVING</td><td>Songs of Personal Thanksgiving, Gratitude & Glorification of God</td><td><a href="https://www.youtube.com/playlist?list=PLLtESnu0FMHk" target="_blank">YouTube →</a></td></tr>
-        <tr><td>17. HEART OF WORSHIP SERIES — LIVE SESSIONS</td><td>Collection of Original Songs & Hymn Recorded in 2020</td><td><a href="https://www.youtube.com/playlist?list=PLcdlhXwEOQGI" target="_blank">YouTube →</a></td></tr>
+        <tr><td>17. HEART OF WORSHIP — LIVE SESSIONS</td><td>Original Live Recordings · 2020</td><td><a href="https://www.youtube.com/playlist?list=PLcdlhXwEOQGI" target="_blank">YouTube →</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -1361,6 +1396,13 @@ section[id] {scroll-margin-top: 72px}
     </div>
 
     <div style="display:flex;flex-direction:column;gap:1px;background:var(--border)">
+      <a href="https://jemicit.blogspot.com/2026/07/heart-of-worship-series-decade-of.html" target="_blank"
+         style="background:var(--navy2);padding:1.8rem;display:block;transition:background 0.2s;text-decoration:none"
+         onmouseover="this.style.background='var(--navy3)'" onmouseout="this.style.background='var(--navy2)'">
+        <div style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem">Jul 2026 · Music &amp; Ministry</div>
+        <div style="font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:0.5rem;line-height:1.3">Heart Of Worship Series: A Decade of Waiting</div>
+        <div style="font-size:0.8rem;color:var(--muted);line-height:1.6">How 167 gospel tracks across 3 languages grew from a silent archive of songs composed at Ifunda — before AI, before tools, before anyone was watching.</div>
+      </a>
       <a href="https://jemicit.blogspot.com/2024/11/guest-lecture-recap.html" target="_blank"
          style="background:var(--navy2);padding:1.8rem;display:block;transition:background 0.2s;text-decoration:none"
          onmouseover="this.style.background='var(--navy3)'" onmouseout="this.style.background='var(--navy2)'">
@@ -1425,7 +1467,7 @@ section[id] {scroll-margin-top: 72px}
         <div class="stat-lbl">University GPA</div>
       </div>
       <div class="stat-box">
-        <div class="stat-num">150+</div>
+        <div class="stat-num">167</div>
         <div class="stat-lbl">Gospel Tracks</div>
       </div>
       <div class="stat-box">
